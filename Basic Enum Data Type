@@ -1,0 +1,16 @@
+#include<stdio.h>
+
+int main()
+{
+    enum Company { GOOGLE, FACEBOOK, XEROX, YAHOO, EBAY, MICROSOFT };
+
+    enum Company xerox = XEROX;
+    enum Company google = GOOGLE;
+    enum Company ebay = EBAY;
+
+    printf("The Value of xerox is : %d\n" , xerox);
+    printf("The Value of google is : %d\n" , google);
+    printf("The Value of ebay is : %d\n" , ebay);
+
+    return 0;
+}
