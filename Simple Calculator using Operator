@@ -1,0 +1,25 @@
+#include<stdio.h>
+
+//This is a simple Counting Numbers Program
+int main()
+{
+
+    unsigned int a = 0;
+    unsigned int b = 0;
+    int i;
+
+    int result = 0;
+
+    printf("Enter 'A' Value :");
+
+    scanf("%d" , &a);
+
+    printf("Enter 'B' Value :");
+
+    scanf("%d" , &b);
+
+    result = a(-)(+)(/)(&)(|)(*)b;
+
+    printf("The Result of a&b : %d", result);
+    return 0;
+}
