@@ -1,0 +1,18 @@
+#include<stdio.h>
+
+int main()
+{
+    int score = 0;
+    int big = 90;
+
+    printf("Enter Score :");
+    scanf("%d" , &score);
+
+    if(score>big)
+        printf("You Win Mad Skills!\n");
+
+    else
+        printf("You Not Win Dummy!\n");
+
+    return 0;
+} 
