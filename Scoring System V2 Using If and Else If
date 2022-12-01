@@ -1,0 +1,20 @@
+#include<stdio.h>
+
+int main()
+{
+    int score = 0;
+    int big = 90;
+
+    printf("Enter Your Score :");
+    scanf("%i" , &score);
+
+    if(score<big)
+
+        printf("You Loose!\n");
+
+    else if(score>90)
+        printf("You Won!");
+    else if(score==90)
+        printf("You Almost Had It!");
+
+}
