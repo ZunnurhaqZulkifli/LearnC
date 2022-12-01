@@ -1,0 +1,15 @@
+#include<stdio.h>
+
+int main()
+{
+    float number = 0.0;
+
+    printf("Enter a number :");
+    scanf("%f" , &number);
+
+    (number < 1) ?
+    printf("The number is less than 1") : printf("The number is more than 1");
+
+    return 0;
+
+}
