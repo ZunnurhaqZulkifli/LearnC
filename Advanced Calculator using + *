@@ -1,0 +1,33 @@
+#include<stdio.h>
+
+
+int main()
+{
+
+    unsigned int a = 0; //0101 0000
+    unsigned int b = 0; //0000 1110
+    //unsigned int c = 0;
+    //unsigned int d = 0;
+
+    int result = 0;
+
+    //0101 1110
+    printf("1.Additional CalCuuLaTioUr\n");
+    printf("Enter 'A' Value [0-100] :");
+    scanf("%d" , &a);
+    printf("Enter 'B' Value [0-100] :");
+    scanf("%d" , &b);
+    result = a+b;
+    printf("The Result of a+b : %d\n\n", result);
+
+    printf("2.Multiplication CalCuuLaTioUr\n");
+    printf("Enter 'A' Value [0-100] :");
+    scanf("%d" , &a);
+    printf("Enter 'B' Value [0-100] :");
+    scanf("%d" , &b);
+    result = a*b;
+    printf("The Result of a*b : %d\n", result);
+
+    return 0;
+
+}
