@@ -1,0 +1,51 @@
+#include<stdio.h>
+
+int main()
+{
+    enum Allday{Mon = 1,Tue = 2,Wed = 3,Thu = 4,Fri = 5,Sat = 6, Sun = 7, Zunnur = 8};
+    enum Allday today = 0;
+    int b = 0;
+
+    printf("Enter a of choice :");
+    scanf("%d" , &today);
+    printf("Enter b:");
+    scanf("%d" , &b);
+
+    today = today + b;
+
+    printf("Number Entered is : %d\n" , today);
+
+    switch(today)
+    {
+    case Mon :
+        printf("Today is Monday");
+        break;
+    case Tue :
+        printf("Today is Tuesday");
+        break;
+    case Wed :
+        printf("Today is Wednesday");
+        break;
+    case Thu :
+        printf("Today is Thursday");
+        break;
+    case Fri :
+        printf("Today is Friday");
+        break;
+    case Sat :
+        printf("Today is Saturday");
+        break;
+    case Sun :
+        printf("Today is Sunday");
+        break;
+    case Zunnur :
+        printf("This is Zunnurhaq Handsome");
+        break;
+    default :
+        printf("Nothingness\n");
+        break;
+    }
+        return 0;
+    }
+
+
