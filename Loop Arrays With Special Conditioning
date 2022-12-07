@@ -1,0 +1,71 @@
+#include<stdio.h>
+
+#define MONTHS 12
+
+int main ()
+{
+    int days[MONTHS]={31,29,30,31,30,31,30,31,30,31,30,31};
+    int index;
+    char enter = 0;
+    enum allMonth{Jan=1,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec};
+    enum allMonth thisMonth = 0;
+
+    for(index = 0; index < MONTHS; index++)
+        printf("Month %d has %2d days.\n", index+1, days[index]);
+
+    printf("SELECT A MONTH = ");
+    scanf("%d" , &index);
+
+
+    if(index > 12 || index < 1){
+        printf("There is no such thing as Month %d!" , index);
+        return;
+    }
+    else if (index = index-1);
+    printf("Month %d has %2d days.\n" , index+1, days[index]);
+
+    thisMonth = index+1;
+    switch(thisMonth)
+        {
+    case Jan :
+        printf("Selected Month is January");
+        break;
+    case Feb :
+        printf("Selected Month is February");
+        break;
+    case Mar :
+        printf("Selected Month is March");
+        break;
+    case Apr :
+        printf("Selected Month is April");
+        break;
+    case May :
+        printf("Selected Month is May");
+        break;
+    case Jun :
+        printf("Selected Month is June");
+        break;
+    case Jul :
+        printf("Selected Month is July");
+        break;
+    case Aug :
+        printf("Selected Month is August");
+        break;
+    case Sep :
+        printf("Selected Month is September");
+        break;
+    case Oct :
+        printf("Selected Month is October");
+        break;
+    case Nov :
+        printf("Selected Month is November");
+        break;
+    case Dec :
+        printf("Selected Month is December");
+        break;
+    }
+    if(index+1 == 6)
+        printf("\nJune is your birth date!....");
+
+    return 0;
+}
