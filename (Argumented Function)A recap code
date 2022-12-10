@@ -1,0 +1,80 @@
+//A recap code
+#include<stdio.h>
+#define YEAR 5
+
+int main()
+{
+    //printf
+    printf("This is a printf function");
+
+    //using scanf to read and printf to print output.
+    int num = 0;
+    printf("\nEnter a number = ");
+    scanf("%d" , &num);
+    printf("The Number Entered1 is = %d\n", num);
+
+    //using input and output oeprator makes a calculator
+
+    printf("\n!!!!! This is the calculator feature!!!!! \n");
+
+    int a,b = 0;
+    int result;
+
+    printf("\nEnter 'A' number = ");
+    scanf("%d" , &a);
+    printf("\nEnter 'B' number = ");
+    scanf("%d" , &b);
+
+    result = a + b; //(+-*/)<-- Operators Can Be Assigned Here
+    printf("Both Number Added is = %d\n", result);
+
+    printf("\n!!!!! Enums For Days !!!!! \n");
+
+    enum allDay{Mon=1,Tue,Wed,Thu,Fri,Sat,Sun};
+    enum allDay today, today1 = 0;
+
+    printf("Enter a number between 1-7 =");
+    scanf("%d" , &today);
+
+    if(today > 7 || today < 1)
+        printf("The Number That You Entered is Incorrect\n");
+        else(today == today);
+
+    switch(today){
+        case Mon:
+        printf("Day Selected is Monday\n");
+        break;
+
+        case Tue:
+        printf("Day Selected is Tuesday\n");
+        break;
+
+        case Wed:
+        printf("Day Selected is Wednesday\n");
+        break;
+
+        case Thu:
+        printf("Day Selected is Thursday\n");
+        break;
+
+        case Fri:
+        printf("Day Selected is Friday\n");
+        break;
+
+        case Sat:
+        printf("Day Selected is Saturday\n");
+        break;
+
+        case Sun:
+        printf("Day Selected is Sunday\n");
+        break;
+    }
+    printf("\n!!!!! Counting Years++ !!!!! \n");
+
+    int year;
+
+    for(year = 0; year < YEAR; year++) //<----- This calculation adds the year
+    printf("%5d\n" , 2022 + year);
+
+    return 0;
+}
