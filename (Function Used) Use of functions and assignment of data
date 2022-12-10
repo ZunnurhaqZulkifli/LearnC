@@ -1,0 +1,38 @@
+//Use of functions and assignment of data
+#include <stdio.h>
+#include <stdlib.h>
+
+void multiplyOperator(int x, int y)
+{
+    int result=x*y;
+    printf("The Product of %d multiplied by %d is: %d\n",x,y,result);
+}
+
+void divisionedOperator(int x, int y)
+{
+    int result=x/y;
+    printf("The Product of %d divided    by %d is: %d\n",x,y,result);
+}
+
+void addtionalOperator(int x, int y)
+{
+    int result=x+y;
+    printf("The Product of %d additioned by %d is: %d\n",x,y,result);
+}
+
+void subtractOperator(int x, int y)
+{
+    int result=x-y;
+    printf("The Product of %d subtracted by %d is: %d\n",x,y,result);
+}
+
+
+int main()
+{
+    multiplyOperator(10,20);
+    addtionalOperator(20,30);
+    divisionedOperator(50,2);
+    subtractOperator(50,20);
+
+    return 0;
+}
