@@ -1,0 +1,60 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+//void stringTest();
+
+int main()
+{
+    //Initializing String Characters and Outputting it to printf.
+    char word[10] = {'H','e','l','l','o','!'};
+    printf("Print : %s" , word);
+
+    //Inputting a String Character and Outputting to printf.
+    char input[20];
+    printf("\nPlease Enter Your Name : ");
+    scanf("%s" , input); //<---- There is no need to use of & on string!.
+
+    printf("Your Name is : %s \n" , input);
+
+    /********** (Some Notes To Remember)
+    Reminder:: the string constant "x" is not the same as the character constant 'x'
+
+    - 'x' is a basic type (char)
+    - "x" is a derived type, an array of chars
+    - "x" really consists of two characters, 'x' and '\0', the null character.
+    **********/
+
+    //stringTest();
+
+    return 0;
+}
+
+void stringTest()
+{
+    /******(Comparing the length of the character)
+
+    - Though we will never use something like this
+    - strlen() is the use case for something like this
+    - strlen() is used to find length of strings
+
+
+    *********/
+
+    char str1[]= "To be or not to be";
+    char str2[]= ",that is the question";
+    unsigned int count = 0;
+
+    while(str1[count]!="\0")
+        ++count;
+
+    printf("The Length of the string \"%s\" is %d characters.\n" ,str1, count);
+
+    count = 0;
+
+    while(str2[count]!="\0")
+        ++count;
+
+    printf("The Length of the string \"%s\" is %d characters.\n" ,str2 , count);
+
+    return;
+}
