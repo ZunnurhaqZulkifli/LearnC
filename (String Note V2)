@@ -1,0 +1,160 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+/*******(String Functions)*******
+
+1. Common String Functions are;
+ • In Order To Use all of the functions, you have to #include <string.h> header.
+ • Getting Length of the string --> strlen
+ • Copying One Character String To Another --> strcpy() & strncpy()
+ • Combining Two Characters Strings Together (concatenation) --> strcat() & strncat()
+ • Determining If Two Characters String Are Equal --> strcmp() & strncmp()
+
+*********/
+
+void menuSwitch();
+void myNameIs();
+void getLengthString();
+void copyingStrings();
+void concatString();
+void compareString();
+
+
+int main()
+{
+    menuSwitch();
+    myNameIs();
+    getLengthString();
+    copyingStrings();
+    concatString();
+    compareString();
+
+    return 0;
+}
+
+void menuSwitch()
+{
+    int pickNum = 0;
+    printf("Enter (1) For (Displaying String) \n");
+    printf("Enter (2) For (Copying String) \n");
+    printf("Enter (3) For (Concatenation String) \n");
+    printf("Enter (4) For (Comparison String) \n");
+
+    printf("Please Enter Number = ");
+    scanf("%d" , &pickNum);
+
+    if (pickNum == 1)
+    myNameIs();
+
+    else if (pickNum == 2)
+    copyingStrings();
+
+    else if (pickNum == 3)
+    concatString();
+
+    else if (pickNum == 4)
+    compareString();
+
+    //else if (pickNum < 1 || pickNum > 4)
+    //printf("\n\nPlease Enter a Valid Number!!\n\n");
+
+    return;
+}
+
+void myNameIs()
+{
+    //Assigning char array consists of numbers.
+    char name[5]={'o','1','2','3'};
+    //This is for getLengthString
+    char myString = name['1'];
+    //Entering Name Input
+    printf("\nEnter Name =");
+    scanf("%s" , &name['1']);//<--- Use (&) even for print function
+
+    printf("my name is ""(%s)""\n", &name['1']);
+
+    //printf("The length of this string is: %d\n ", strlen(&name['1']));
+
+    return;
+}
+
+void getLengthString()
+{
+    char name[5]={'o','1','2','3'};
+    char myString = name['1'];
+
+    printf("The length of this string is: %d\n\n ", strlen(&name['1']));
+
+    return;
+
+}
+
+void copyingStrings()
+{
+    /*******(Only For Demo)******
+
+    initialize string source
+    char myString[]="My Name is Zurge98";
+    initialize string destination
+    char temp[50];
+
+    *********/
+
+    printf("This is String Copying Function!!!!\n\n");
+
+    char name[5]={'o','1','2','3'};
+    char myString = name['1'];
+    char temp[50]; //<-------Determines The Length of bits of the string to be copied
+    strncpy(temp, &name['1'], sizeof(temp) -1 );
+    printf("The Copied String is"" (%s)\n", temp);
+
+    return;
+}
+
+void concatString()
+{
+    char src[50], dest[50];
+
+    strcpy(src, "This is source");
+    strcpy(dest, "This is destination");
+
+    strncat(dest, src, 15);
+
+    printf("\nFinal destination string : |%s|" , dest);
+
+    return;
+}
+
+void compareString()
+{
+    /*********(Comparing Two Strings)*****
+    •   sasawssds
+
+
+
+
+    ************/
+
+    printf("\nThis Will Compare Two Strings, The Left and Right\n\n");
+
+    printf("strcmp(\"A\",\"A\")is ");
+    printf("%d\n" , strcmp("A", "A"));
+
+    printf("strcmp(\"A\",\"B\")is ");
+    printf("%d\n" , strcmp("A", "B"));
+
+    printf("strcmp(\"B\",\"A\")is ");
+    printf("%d\n" , strcmp("B", "A"));
+
+    printf("strcmp(\"C\",\"A\")is ");
+    printf("%d\n" , strcmp("C", "A"));
+
+    printf("strcmp(\"Z\",\"a\")is ");
+    printf("%d\n" , strcmp("Z", "a"));
+
+    printf("strcmp(\"apples\",\"apple\")is ");
+    printf("%d\n\n" , strcmp("apples", "apple"));
+
+    return main();
+}
