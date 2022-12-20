@@ -1,0 +1,222 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+
+/**********(Searching, Tokenizing and Analyzing Strings)****
+
+    1. To search a string use strchr() / strstr()
+    2. Tokenizing a string --> A token is a sequence of characters within
+       a string that is bounded by a delimiter(space, comma, period)
+        • breaking sentence into words is called tokenizing
+        • strtok()
+
+    3. Analyzing Strings
+        • Islower(),isupper(), isalpha(), isdigit().
+
+    4. Pointers - Additional Notes
+        •   A variable that stores data
+        •   It's Value is the address of another location in the memory that can contain a value
+        •   scanf() also uses pointers.
+
+    Example of use case pointers
+
+    int Number = 25;
+    int *pNumber = &Number;
+
+    5. Searching for a substring
+        •   strstr() function is probably the most useful of all the searching functions
+        •   returns a pointer to the position in the first string where substring is found
+
+***************/
+
+void strtokExample();
+void analyzingString();
+void convertingStrings();
+void printTable();
+void menuSwitch();
+
+
+int main()
+{
+
+    int pickNum = 0;
+    printf("Enter (1) For (Strtok - Example) \n");
+    printf("Enter (2) For (Analyzing String) \n");
+    printf("Enter (3) For (Converting Strings) \n");
+    printf("Enter (4) For (Printing Table) \n");
+
+    printf(" ( ͡ᵔ ͜ʖ ͡ᵔ ) Please Enter Number = ");
+    scanf("%d" , &pickNum);
+
+    if (pickNum == 1)
+    strtokExample();
+
+    else if (pickNum == 2)
+    analyzingString();
+
+    else if (pickNum == 3)
+    convertingStrings();
+
+    else if (pickNum == 4)
+    printTable();
+
+    if (pickNum == 0 || pickNum > 4)
+    {
+        printf("NOT VALID NUMBER - PLEASE ENTER AGAIN (╬ಠ益ಠ)!\n\n");
+        return main();
+    }
+        else return 0;
+
+    //strtokExample();
+    //analyzingString();
+    //convertingStrings();
+    //printTable();
+    //escapeCode();
+    return 0;
+
+}
+
+void strtokExample()
+{
+    char str[80] = "Hello how are you - my name is - zunnur";
+    const char s[2] = "-";
+    char *token;
+
+    //getting the first token
+    token = strtok(str, s);
+
+
+    //walk through other tokens
+    while(  token != NULL ) {
+        printf(" %s\n" , token);
+
+        token = strtok(NULL, s);
+    }
+    return;
+}
+
+void analyzingString()
+{
+    char buf[100];
+    int nLetters = 0;
+    int nDigits = 0;
+    int nPunct = 0;
+
+    printf("!!!WARNING!!! - PLEASE DON'T PUT SPACES BETWEEN SENTENCES\n");
+
+    printf("Enter an interesting string of less than %d characters:\n = ", 100);
+    scanf("%s", buf);
+
+    int i = 0;
+    while(buf[i])
+    {
+        if(isalpha(buf[i]))
+          ++nLetters;
+        else if(isdigit(buf[i]))
+          ++nDigits;
+        else if(ispunct(buf[i]))
+          ++nPunct;
+      ++i;
+    }
+
+    printf("\n Your string contained %d letters, %d digits and %d puncuation characters.\n" , nLetters, nDigits, nPunct);
+    return;
+}
+
+void convertingStrings()
+{
+    /***********(Extra Notes)**********
+
+    •   The stdlib.h header file declares functions that you can use to convert a string to a numerical value
+
+    __________________________________________________________________________________
+    function        |                           *Returns*                             |
+    ----------------------------------------------------------------------------------|
+    atof()          |A value of type double that is produced from the string argument |
+                    |Infinity as a double value is recognized from the strings "INF"  |
+                    |or "INFINITY" where any character can be in uppercase or         |
+                    |lowercase and 'not a number' is recognized from the string "NAN" |
+                    |in uppercase or lowercase.                                       |
+    ----------------------------------------------------------------------------------|
+    atoi()          |A value of type "int" that is produced from the string argument. |
+    ----------------------------------------------------------------------------------|
+    atol()          |A value of type long that is produced from the string argument.  |
+    ----------------------------------------------------------------------------------|
+    atoll()         |A value of type long long that is produced from the              |
+                    |string argument.                                                 |
+    ________________|_________________________________________________________________|
+
+
+
+    ***********/
+    char text[100];
+    char substring[40];
+    int i;
+
+    printf("Enter the string to be searched (less than %d characters):\n" , 100);
+    scanf("%s", text);
+
+    printf("\nEnter the string sought(less than %d characters):\n" , 40);
+    scanf("%s", substring);
+
+    printf("\nFirst string entered:\n%s\n" , text);
+    printf("\nSecond string entered:\n%s\n" , substring);
+
+    //convert both strings to uppercase
+    for(i=0; (text[i]=(char)toupper(text[i]))!='\0';++i);
+    for(i=0; (substring[i]=(char)toupper(substring[i]))!='\0';++i);
+
+    printf("The second string %s found in the first.\n", ((strstr(text,substring)== NULL)?"was not":"was"));
+
+    return;
+
+}
+
+void printTable()
+{
+    printf("Somme Table Notes ( ͡° ͜ʖ ͡°) - Zunnur \n\n");
+
+
+    printf("__________________________________________________________________________________\n");
+    printf("function        |                           *Returns*                             |\n");
+    printf("----------------|-----------------------------------------------------------------|\n");
+    printf("atof()          |A value of type double that is produced from the string argument |\n");
+    printf("                |Infinity as a double value is recognized from the strings 'inf'  |\n");
+    printf("                |or 'INFINITY' where any character can be in uppercase or         |\n");
+    printf("                |lowercase and 'not a number' is recognized from the string 'NAN' |\n");
+    printf("                |in uppercase or lowercase.                                       |\n");
+    printf("----------------|-----------------------------------------------------------------|\n");
+    printf("atoi()          |A value of type 'int' that is produced from the string argument. |\n");
+    printf("----------------|-----------------------------------------------------------------|\n");
+    printf("atol()          |A value of type long that is produced from the string argument.  |\n");
+    printf("----------------|-----------------------------------------------------------------|\n");
+    printf("atoll()         |A value of type long long that is produced from the              |\n");
+    printf("                |string argument.                                                 |\n");
+    printf("________________|_________________________________________________________________|\n");
+
+    printf("\n\n");
+    printf("__________________________________________________________________________________\n");
+    printf("function        |                           *Returns*                             |\n");
+    printf("----------------|-----------------------------------------------------------------|\n");
+    printf("strtod()        |A Value of type 'double' is produced from the initial part of the|\n");
+    printf("                |string specified by the first argument. The second argument is a |\n");
+    printf("                |pointer to a variable, 'ptr' say, of type 'char*' in which the   |\n");
+    printf("                |function will store address of the first character following the |\n");
+    printf("                |substring that was converted to the 'double' value. If no string |\n");
+    printf("                |was found that could be converted to type 'double', the variable |\n");
+    printf("                |'ptr' will contain the address passed as the first argument.     |\n");
+    printf("----------------|-----------------------------------------------------------------|\n");
+    printf("strtof()        |Value of type 'flaot'. In all other respects it works as strtod()|\n");
+    printf("----------------|-----------------------------------------------------------------|\n");
+    printf("strtold()       |Value of type 'long double'. In all other respects it works as   |\n");
+    printf("                |strtod()                                                         |\n");
+    printf("________________|_________________________________________________________________|\n");
+    return;
+}
+
+
+
+
+
+
