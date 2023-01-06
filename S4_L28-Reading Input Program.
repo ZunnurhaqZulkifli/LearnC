@@ -1,0 +1,134 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/** (Reading Input From The Terminal)
+
+ •  scanf() --> is one common to use in order to read input
+    from the user.
+
+ •  Format Specifiers can be used to format the input data,
+    Ex. (%s -->(String), %d -->(Integer), %c -->(Single Char) %f -->(Float), %lf -->(double))
+
+ •  if the input if double value, please use &lf, it is common practice to do so.
+
+ •
+
+**/
+
+void gettingInputString();
+void gettingInputInteger();
+void gettingInputDouble();
+void gettingInputFloat();
+
+
+int main()
+{
+    int i;
+    printf("\n");
+    printf("This is a menu, please choose one\n");
+    printf("(1) - Getting String Input\n");
+    printf("(2) - Getting Integer Input\n");
+    printf("(3) - Getting Double Input\n");
+    printf("(4) - Getting Float Input\n");
+    printf("(5) - Getting All Input\n");
+    printf("(6) - Exit\n");
+
+    printf("\nPlease Select a Number = ");
+    scanf("%d" , &i);
+
+    if(i < 1 || i > 6)
+    {
+        printf("Wrong Choice, Please Enter 1 - 6!!!\n\n");
+        return main();
+    }
+    else if(i == 1)
+    {
+        gettingInputString();
+        return main();
+    }
+    else if(i == 2)
+    {
+        gettingInputInteger();
+        return main();
+    }
+    else if(i == 3)
+    {
+        gettingInputDouble();
+        return main();
+    }
+    else if(i == 4)
+    {
+        gettingInputFloat();
+        return main();
+    }
+    else if(i == 5)
+    {
+        printf("***********This is a all of the function***********/n");
+        gettingInputString();
+        printf("\n");
+        gettingInputInteger();
+        printf("\n");
+        gettingInputDouble();
+        printf("\n");
+        gettingInputFloat();
+    }
+    else if(i == 6)
+    {
+        exit(0);
+    }
+
+    return 0;
+}
+
+void gettingInputString()
+{
+    char str[100];
+
+        printf("\n***********This is a string function***********");
+        printf("\n • String Inputs Use (Per)&(s)\n");
+        printf("\nPlease Enter a String = ");
+        scanf("%s" , str);
+        printf("The Entered String is = %s\n" , str);
+
+    return;
+}
+
+void gettingInputInteger()
+{
+    int number;
+
+        printf("\n***********This is a integer function***********/n");
+        printf("\n • Whole Number Uses (Per)&(d)\n");
+        printf("\nPlease Enter a Number = ");
+        scanf("%d" , &number);
+        printf("The Entered Number is = %d\n" , number);
+
+    return;
+}
+
+void gettingInputDouble()
+{
+    double a;
+
+        printf("\n***********This is a double function***********/n");
+        printf("\n • Double Inputs Uses (Per)&(lf)\n");
+        printf("\nPlease Enter a double = ");
+        scanf("%lf" , &a);
+        printf("The Entered Double is = %lf" , a);
+
+    return;
+}
+
+void gettingInputFloat()
+{
+    float a;
+
+        printf("\n***********This is a float function***********/n");
+        printf("\n • Float Inputs Use (Per)&(s)\n");
+        printf("\nPlease Enter Float = ");
+        scanf("%f" , &a);
+        printf("The Entered Float is = %f" , a);
+
+    return;
+}
+
